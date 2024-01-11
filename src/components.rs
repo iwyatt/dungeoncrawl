@@ -22,3 +22,13 @@ pub struct WantsToMove {
     pub entity: Entity,
     pub destination: Point,
 }
+
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub struct Health {
+    pub current: i32,
+    pub max: i32
+}
+
+#[derive(Clone, PartialEq)]
+//if you only have one piece of information to store inside a struct, you can replace the named fields with `(pub type)`
+pub struct Name(pub String); 
