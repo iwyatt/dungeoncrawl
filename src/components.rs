@@ -26,9 +26,15 @@ pub struct WantsToMove {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub struct Health {
     pub current: i32,
-    pub max: i32
+    pub max: i32,
 }
 
 #[derive(Clone, PartialEq)]
 //if you only have one piece of information to store inside a struct, you can replace the named fields with `(pub type)`
-pub struct Name(pub String); 
+pub struct Name(pub String);
+
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub struct WantsToAttack {
+    pub attacker: Entity,
+    pub victim: Entity,
+}
