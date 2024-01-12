@@ -33,7 +33,7 @@ pub fn player_input(
             .unwrap();
 
         let mut enemies = <(Entity, &Point)>::query().filter(component::<Enemy>());
-        
+
         let mut did_something = false;
 
         if delta.x != 0 || delta.y != 0 {
@@ -68,11 +68,11 @@ pub fn player_input(
 
         if !did_something {
             if let Ok(mut health) = ecs
-            .entry_mut(player_entity)
-            .unwrap()
-            .get_component_mut::<Health>()
+                .entry_mut(player_entity)
+                .unwrap()
+                .get_component_mut::<Health>()
             {
-                health.current = i32::min(health.max,health.current+1);
+                health.current = i32::min(health.max, health.current + 1);
             }
         }
 
