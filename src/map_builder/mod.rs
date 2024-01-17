@@ -6,6 +6,8 @@ mod rooms;
 use rooms::RoomsArchitect;
 mod automata;
 use automata::CellularAutomataArchitect;
+mod drunkard;
+use drunkard::DrunkardsWalkArchitect;
 
 trait MapArchitect {
     fn new(&mut self, rng: &mut RandomNumberGenerator) -> MapBuilder;
