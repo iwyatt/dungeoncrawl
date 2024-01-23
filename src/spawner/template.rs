@@ -1,9 +1,7 @@
 use crate::prelude::*;
 use legion::systems::CommandBuffer;
-use ron::de::from_reader;
 use serde::Deserialize;
 use std::collections::HashSet;
-use std::fs::File;
 
 #[derive(Clone, Deserialize, Debug)]
 pub struct Template {
@@ -28,10 +26,13 @@ pub struct Templates {
     pub entities: Vec<Template>,
 }
 
+const TEMPLATE_FILE : &[u8] = include_bytes!("../../resources/template.ron");
+
 impl Templates {
     pub fn load() -> Self {
-        let file = File::open("resources/template.ron").expect("Failed opening file");
-        from_reader(file).expect("Unable to load templates")
+        ron::de::from_bytes(TEMPLATE_FILE).expect("Unable to load templates")
+        // let file = File::open("resources/template.ron").expect("Failed opening file");
+        // from_reader(file).expect("Unable to load templates")
     }
 
     pub fn spawn_entities(
