@@ -9,13 +9,13 @@ Templates(
         Template(
             entity_type: Item,
             name : "Shiny Sword", glyph : 'S', levels : [ 1, 2 ],
-            base_damage: Some(1),
+            base_damage: Some(2),
             frequency: 1
         ),
         Template(
             entity_type: Item,
             name : "Huge Sword", glyph : '/', levels : [ 2 ],
-            base_damage: Some(1),
+            base_damage: Some(3),
             frequency: 1
         ),                
         Template(
