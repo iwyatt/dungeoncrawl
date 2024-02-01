@@ -9,12 +9,21 @@ mod prelude {
     pub use crate::components::*;
     pub use crate::spawner::*;
     pub use bracket_lib::prelude::*;
-    pub const SCREEN_WIDTH: i32 = 80;
-    pub const SCREEN_HEIGHT: i32 = 50;
+    
+    // when compiling to wasm
+    pub const SCREEN_WIDTH: i32 = 64;
+    pub const SCREEN_HEIGHT: i32 = 40;
+    
+    // when compiling to all other platforms
+    // pub const SCREEN_WIDTH: i32 = 80;
+    // pub const SCREEN_HEIGHT: i32 = 50;
+
     pub use crate::map::*;
     pub use crate::map_builder::*;
+    
     pub const DISPLAY_WIDTH: i32 = SCREEN_WIDTH / 2;
-    pub const DISPLAY_HEIGHT: i32 = SCREEN_HEIGHT / 2;
+    pub const DISPLAY_HEIGHT: i32 = SCREEN_HEIGHT / 2;    
+
     pub use crate::camera::*;
     pub use crate::systems::*;
     pub use crate::turn_state::*;
